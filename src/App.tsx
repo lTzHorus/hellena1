@@ -162,7 +162,7 @@ export default function App() {
               </h2>
               
               <p className="text-lilac-800/80 max-w-xs mx-auto mb-6 text-sm md:text-lg leading-relaxed font-medium">
-                Um convite fofinho de Yasmin e Je para celebrar a vida que floresce.
+                Agradecemos imensamente pela sua presença! Hoje é um dia muito especial, e estamos felizes por tê-lo conosco. Obrigado por fazer parte deste momento único!
               </p>
 
               <motion.button

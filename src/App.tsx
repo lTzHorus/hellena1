@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Flower, 
@@ -60,10 +60,10 @@ export default function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [showBurst, setShowBurst] = useState(false);
 
-  // ✅ AGORA SIM! Usando as imagens locais da pasta src/imagens/
+  // ✅ IMAGENS DA PASTA PUBLIC (funciona 100%)
   const ALBUM_PHOTOS = [
     "/imagens/img1.jpg",
-    "/imagens/img2.jpg", 
+    "/imagens/img2.jpg",
     "/imagens/img3.jpg",
     "/imagens/img4.jpg",
     "/imagens/img5.jpg",

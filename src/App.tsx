@@ -158,7 +158,7 @@ export default function App() {
               className="space-y-2 relative z-10"
             >
               <h2 className="font-serif text-2xl md:text-5xl text-lilac-900 mb-1 italic font-bold text-glow">
-                Jardim da Hellena
+                Jardim da Hellena.
               </h2>
               
               <p className="text-lilac-800/80 max-w-xs mx-auto mb-6 text-sm md:text-lg leading-relaxed font-medium">

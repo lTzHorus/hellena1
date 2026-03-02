@@ -204,7 +204,7 @@ export default function App() {
               <div className="space-y-1">
                 <h3 className="uppercase tracking-[0.3em] text-[10px] font-bold text-lilac-700 flex items-center justify-center gap-1">
                   <Footprints size={12} />
-                  Este é um Chá de Bebê
+                  Jardim Encantado da
                   <Footprints size={12} />
                 </h3>
                 <motion.h1 

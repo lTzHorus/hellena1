@@ -60,18 +60,18 @@ export default function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [showBurst, setShowBurst] = useState(false);
 
-  // ✅ IMAGENS DA PASTA PUBLIC (funciona 100%)
+  // Imagens com o caminho completo /hellena1/
   const ALBUM_PHOTOS = [
-    "/imagens/img1.jpg",
-    "/imagens/img2.jpg",
-    "/imagens/img3.jpg",
-    "/imagens/img4.jpg",
-    "/imagens/img5.jpg",
-    "/imagens/img6.jpg",
-    "/imagens/img7.jpg",
-    "/imagens/img8.jpg",
-    "/imagens/img9.jpg",
-    "/imagens/img10.jpg",
+    "/hellena1/imagens/img1.jpeg",
+    "/hellena1/imagens/img2.jpeg",
+    "/hellena1/imagens/img3.jpeg",
+    "/hellena1/imagens/img4.jpeg",
+    "/hellena1/imagens/img5.jpeg",
+    "/hellena1/imagens/img6.jpeg",
+    "/hellena1/imagens/img7.jpeg",
+    "/hellena1/imagens/img8.jpeg",
+    "/hellena1/imagens/img9.jpeg",
+    "/hellena1/imagens/img10.jpeg",
   ];
 
   const nextPhoto = () => {
@@ -124,19 +124,19 @@ export default function App() {
               {/* Decorative Frame */}
               <div className="absolute -inset-3 bg-gradient-to-tr from-lilac-400 to-lilac-200 rounded-[1.5rem] blur-lg opacity-50 group-hover:opacity-80 transition-opacity" />
               
-              <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10">
+              <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10 bg-lilac-100 flex items-center justify-center">
                 <img 
-                  src="/imagens/img1.jpg" 
+                  src="/hellena1/imagens/img1.jpeg" 
                   alt="Yasmin e Je" 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-lilac-900/40 via-transparent to-lilac-200/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-lilac-900/40 via-transparent to-lilac-200/20 pointer-events-none" />
                 
                 {/* Floating Hearts inside photo */}
                 <motion.div 
                   animate={{ y: [0, -15, 0], opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute bottom-4 right-4 text-white"
+                  className="absolute bottom-4 right-4 text-white z-10"
                 >
                   <Heart fill="currentColor" size={24} />
                 </motion.div>
@@ -471,9 +471,9 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] bg-lilac-50 flex flex-col"
+            className="fixed inset-0 z-[100] bg-lilac-50 flex flex-col overflow-y-auto"
           >
-            <div className="p-4 flex items-center justify-between bg-white/80 backdrop-blur-sm border-b border-lilac-100">
+            <div className="p-4 flex items-center justify-between bg-white/80 backdrop-blur-sm border-b border-lilac-100 sticky top-0 z-10">
               <button 
                 onClick={() => setShowAlbum(false)}
                 className="p-2 text-lilac-600 hover:bg-lilac-50 rounded-full transition-colors"
@@ -484,29 +484,34 @@ export default function App() {
               <div className="w-10" /> {/* Spacer */}
             </div>
 
-            <div className="flex-1 relative overflow-hidden flex items-center justify-center p-4">
+            <div className="flex-1 p-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentPhotoIndex}
-                  initial={{ opacity: 0, scale: 0.9, x: 50 }}
-                  animate={{ opacity: 1, scale: 1, x: 0 }}
-                  exit={{ opacity: 0, scale: 1.1, x: -50 }}
-                  transition={{ duration: 0.4 }}
-                  className="relative w-full max-w-sm aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col items-center"
                 >
-                  <img 
-                    src={ALBUM_PHOTOS[currentPhotoIndex]} 
-                    alt={`Foto ${currentPhotoIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold">
+                  {/* ✅ FOTO DO ÁLBUM - AGORA SEM CORTE! */}
+                  <div className="w-full max-w-2xl mx-auto bg-lilac-100 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                    <img 
+                      src={ALBUM_PHOTOS[currentPhotoIndex]} 
+                      alt={`Foto ${currentPhotoIndex + 1}`}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  
+                  {/* Contador de fotos */}
+                  <div className="mt-4 bg-black/40 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold">
                     {currentPhotoIndex + 1} / {ALBUM_PHOTOS.length}
                   </div>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <div className="p-8 flex flex-col items-center gap-4 bg-white/80 backdrop-blur-sm border-t border-lilac-100">
+            <div className="p-4 flex flex-col items-center gap-4 bg-white/80 backdrop-blur-sm border-t border-lilac-100 sticky bottom-0">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={nextPhoto}

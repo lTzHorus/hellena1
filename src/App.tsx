@@ -125,7 +125,7 @@ export default function App() {
               
               <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10">
                 <img 
-                  src="https://drive.google.com/file/d/1HoRbFz15Ab6aQkXVPSGGUUu7A-mBTWDu/view?usp=drivesdk" 
+                  src="/imagens/img1" 
                   alt="Yasmin e Je" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"

@@ -60,17 +60,18 @@ export default function App() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [showBurst, setShowBurst] = useState(false);
 
+  // ✅ AGORA SIM! Usando as imagens locais da pasta src/imagens/
   const ALBUM_PHOTOS = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "/imagens/img1.jpg",
+    "/imagens/img2.jpg", 
+    "/imagens/img3.jpg",
+    "/imagens/img4.jpg",
+    "/imagens/img5.jpg",
+    "/imagens/img6.jpg",
+    "/imagens/img7.jpg",
+    "/imagens/img8.jpg",
+    "/imagens/img9.jpg",
+    "/imagens/img10.jpg",
   ];
 
   const nextPhoto = () => {
@@ -125,10 +126,9 @@ export default function App() {
               
               <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10">
                 <img 
-                  src="/imagens/img1" 
+                  src="/imagens/img1.jpg" 
                   alt="Yasmin e Je" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-lilac-900/40 via-transparent to-lilac-200/20" />
                 
@@ -498,7 +498,6 @@ export default function App() {
                     src={ALBUM_PHOTOS[currentPhotoIndex]} 
                     alt={`Foto ${currentPhotoIndex + 1}`}
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md text-white px-4 py-1 rounded-full text-xs font-bold">
                     {currentPhotoIndex + 1} / {ALBUM_PHOTOS.length}

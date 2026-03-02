@@ -126,7 +126,7 @@ export default function App() {
               
               <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10 bg-lilac-100 flex items-center justify-center">
                 <img 
-                  src="/hellena1/imagens/img1.jpeg" 
+                  src="/hellena1/imagens/img7.jpeg" 
                   alt="Yasmin e Je" 
                   className="w-full h-full object-contain"
                 />

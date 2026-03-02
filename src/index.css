@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-lilac-50: #fdfaff;
+  --color-lilac-100: #f3e8ff;
+  --color-lilac-200: #e9d5ff;
+  --color-lilac-300: #d8b4fe;
+  --color-lilac-400: #c084fc;
+  --color-lilac-500: #a855f7;
+  --color-lilac-600: #9333ea;
+  --color-lilac-700: #7e22ce;
+  --color-lilac-800: #6b21a8;
+  --color-lilac-900: #581c87;
+}
+
+body {
+  @apply bg-lilac-50 text-slate-900 font-sans antialiased;
+}
+
+.jardim-gradient {
+  background: radial-gradient(circle at 10% 10%, var(--color-lilac-100) 0%, transparent 40%),
+              radial-gradient(circle at 90% 10%, var(--color-lilac-200) 0%, transparent 40%),
+              radial-gradient(circle at 90% 90%, var(--color-lilac-300) 0%, transparent 40%),
+              radial-gradient(circle at 10% 90%, var(--color-lilac-200) 0%, transparent 40%),
+              var(--color-lilac-50);
+  background-attachment: fixed;
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-lg border border-white/40 shadow-[0_15px_40px_rgba(147,51,234,0.1)];
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.animate-float {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 3s ease-in-out infinite;
+}
+
+.sparkle-effect {
+  position: relative;
+}
+
+.sparkle-effect::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  animation: pulse 2s infinite;
+}

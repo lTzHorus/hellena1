@@ -61,16 +61,16 @@ export default function App() {
   const [showBurst, setShowBurst] = useState(false);
 
   const ALBUM_PHOTOS = [
-    "https://picsum.photos/seed/baby1/800/1200",
-    "https://picsum.photos/seed/baby2/800/1200",
-    "https://picsum.photos/seed/baby3/800/1200",
-    "https://picsum.photos/seed/baby4/800/1200",
-    "https://picsum.photos/seed/baby5/800/1200",
-    "https://picsum.photos/seed/baby6/800/1200",
-    "https://picsum.photos/seed/baby7/800/1200",
-    "https://picsum.photos/seed/baby8/800/1200",
-    "https://picsum.photos/seed/baby9/800/1200",
-    "https://picsum.photos/seed/baby10/800/1200",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
 
   const nextPhoto = () => {
@@ -125,7 +125,7 @@ export default function App() {
               
               <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden border-[8px] border-white shadow-xl z-10">
                 <img 
-                  src="https://picsum.photos/seed/couple-love/1000/1000" 
+                  src="https://drive.google.com/file/d/1HoRbFz15Ab6aQkXVPSGGUUu7A-mBTWDu/view?usp=drivesdk" 
                   alt="Yasmin e Je" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
